@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #D4AF37;
+  --color-silver: #C0C0C0;
+  --color-primary-glow: rgba(212, 175, 55, 0.2);
+}
+
+
+[data-theme='dark'] {
+  --bg-main: #050505;
+  --text-main: #ffffff;
+  --accent: #D4AF37;
+  --glass-bg: rgba(20, 20, 20, 0.6);
+  --glass-border: rgba(192, 192, 192, 0.1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* Permite el scroll natural */
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 2. DISEÑO DE LA BARRA KING OF DESIGN (NEGRO & DISCRETO) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* El track (fondo) lo ponemos transparente para que no se vea fijo */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+/* El thumb (la barra) en negro con un toque de brillo */
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.1); /* Un toque dorado casi invisible */
+}
+
+/* Efecto hover para que se note al tocarlo */
+::-webkit-scrollbar-thumb:hover {
+  background: #111111;
+}
+
+/* Para Firefox: Scrollbar negro sobre fondo transparente */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #000000 transparent;
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) transparent;
+}
+
+/* 3. UTILITIES */
+@utility glass-premium {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* Evita que elementos internos generen scrolls accidentales */
+.no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
