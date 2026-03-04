@@ -1,4 +1,4 @@
-// IMPORTACIÓN DE IMÁGENES (Descomenta cuando las tengas en tu carpeta)
+ import Algodon from '../assets/products/algodon.jfif';
 // import tazaBlanca from '../assets/products/sublimacion/taza-blanca.jpeg';
 // import franelaOversize from '../assets/products/sublimacion/franela-oversize.jpeg';
 
@@ -8,7 +8,7 @@ export const PRODUCTS = [
     id: 'SUB-004',
     name: "Camisa de Algodón Personalizada",
     price: 12.00, // Precio actualizado
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=500&auto=format&fit=crop",
+    image: Algodon,
     category: "Textiles"
   },
   {
@@ -31,14 +31,14 @@ export const PRODUCTS = [
   // --- ACCESORIOS Y JUEGOS ---
   {
     id: 'SUB-009',
-    name: "Rompecabezas Grande",
+    name: "Rompecabezas Grande 120 Piezas",
     price: 4.00, // Precio actualizado
     image: "https://images.unsplash.com/photo-1584030373081-f37b7bb4fa8e?q=80&w=500&auto=format&fit=crop",
     category: "Accesorios"
   },
   {
     id: 'SUB-012',
-    name: "Rompecabezas Pequeño",
+    name: "Rompecabezas Pequeño 80 Piezas",
     price: 3.00, // Precio actualizado
     image: "https://images.unsplash.com/photo-1596466765660-636c05877c08?q=80&w=500&auto=format&fit=crop",
     category: "Accesorios"
