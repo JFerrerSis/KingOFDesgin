@@ -21,10 +21,9 @@ export const CatalogoRotulaciones = ({ onBack }: { onBack: () => void, theme: st
   const [isCartOpen, setIsCartOpen] = useState(false);
   
   const [customerData, setCustomerData] = useState({
-    nombre: '', cedula: '', ciudad: '', telefono: '', metodo: 'Delivery', pago: 'Dólares Efectivo', notas: ''
+    nombre: '', cedula: '', ciudad: '', telefono: '', pago: 'Dólares Efectivo', notas: ''
   });
 
-  // Cálculo de cantidad total de productos para el botón
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
   const totalCart = cart.reduce((acc, item) => acc + (item.product.price * item.quantity), 0);
 
@@ -54,7 +53,7 @@ export const CatalogoRotulaciones = ({ onBack }: { onBack: () => void, theme: st
   const removeFromCart = (id: string) => setCart(prev => prev.filter(item => item.product.id !== id));
 
   const sendOrder = () => {
-    const { nombre, cedula, ciudad, telefono, metodo, pago, notas } = customerData;
+    const { nombre, cedula, ciudad, telefono, pago, notas } = customerData;
     const cedulaRegex = /^[VvJjGg]\d{1,10}$/;
     
     if (!nombre || !ciudad || !telefono || !cedula) return alert("Por favor, completa los campos obligatorios ⚡");
@@ -65,13 +64,12 @@ export const CatalogoRotulaciones = ({ onBack }: { onBack: () => void, theme: st
     ).join('\n\n');
 
     const message = [
-      `*SOLICITUD DE COTIZACIÓN - KING OF DESING* 🚀`,
+      `*SOLICITUD DE COTIZACIÓN - KING OF DESIGN* 🚀`,
       `----------------------------------`,
       `👤 *Cliente:* ${nombre.toUpperCase()}`,
       `🎫 *ID:* ${cedula.toUpperCase()}`,
       `📞 *Telf:* ${telefono}`,
       `📍 *Ubicación:* ${ciudad.toUpperCase()}`,
-      `📦 *Entrega:* ${metodo === 'Delivery' ? '🛵 DELIVERY' : '🏬 PICKUP'}`,
       `💳 *Pago:* ${pago.toUpperCase()}`,
       `----------------------------------`,
       `🛍️ *DETALLE DEL PEDIDO:*`,
@@ -99,7 +97,6 @@ export const CatalogoRotulaciones = ({ onBack }: { onBack: () => void, theme: st
           </h2>
         </header>
 
-        {/* Buscador */}
         <div className="w-full max-w-2xl mx-auto px-4 mb-6 shrink-0">
           <div className="relative mb-4">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-yellow-500 opacity-50" size={18} />
@@ -114,7 +111,6 @@ export const CatalogoRotulaciones = ({ onBack }: { onBack: () => void, theme: st
           </div>
         </div>
 
-        {/* Grid de Productos */}
         <div className="flex-1 overflow-y-auto px-4 md:px-8 pb-32 no-scrollbar">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {filteredProducts.map((product) => (
@@ -176,13 +172,7 @@ export const CatalogoRotulaciones = ({ onBack }: { onBack: () => void, theme: st
                 )}
               </div>
 
-              {/* Formulario completo */}
               <div className="p-6 bg-[#0f0f0f] border-t border-white/10 space-y-3">
-                <div className="flex gap-2 p-1 bg-black rounded-xl border border-white/5">
-                  {['Delivery', 'Pickup'].map(m => (
-                    <button key={m} onClick={() => setCustomerData({...customerData, metodo: m})} className={`flex-1 py-2 rounded-lg text-[9px] font-black uppercase border-none cursor-pointer ${customerData.metodo === m ? 'bg-yellow-500 text-black' : 'bg-transparent text-white/40'}`}>{m}</button>
-                  ))}
-                </div>
                 <div className="grid grid-cols-3 gap-2 p-1 bg-black rounded-xl border border-white/5">
                   {['Dólares Efectivo', 'Zelle', 'Pago Móvil'].map(p => (
                     <button key={p} onClick={() => setCustomerData({...customerData, pago: p})} className={`flex-1 py-2 rounded-lg text-[8px] font-black uppercase border-none cursor-pointer ${customerData.pago === p ? 'bg-white/20 text-white' : 'bg-transparent text-white/30'}`}>{p}</button>
@@ -192,7 +182,7 @@ export const CatalogoRotulaciones = ({ onBack }: { onBack: () => void, theme: st
                   <input type="text" placeholder="Nombre" className="p-3 rounded-xl bg-black border border-white/10 text-[10px] text-white outline-none uppercase" value={customerData.nombre} onChange={e => setCustomerData({...customerData, nombre: e.target.value})} />
                   <input type="text" placeholder="Cédula" className="p-3 rounded-xl bg-black border border-white/10 text-[10px] text-white outline-none uppercase" value={customerData.cedula} onChange={e => setCustomerData({...customerData, cedula: e.target.value.toUpperCase()})} />
                   <input type="text" placeholder="Teléfono" className="p-3 rounded-xl bg-black border border-white/10 text-[10px] text-white outline-none uppercase" value={customerData.telefono} onChange={e => setCustomerData({...customerData, telefono: e.target.value})} />
-                  <input type="text" placeholder={customerData.metodo === 'Delivery' ? "Dirección" : "Ciudad"} className="p-3 rounded-xl bg-black border border-white/10 text-[10px] text-white outline-none uppercase" value={customerData.ciudad} onChange={e => setCustomerData({...customerData, ciudad: e.target.value})} />
+                  <input type="text" placeholder="Ciudad / Dirección" className="p-3 rounded-xl bg-black border border-white/10 text-[10px] text-white outline-none uppercase" value={customerData.ciudad} onChange={e => setCustomerData({...customerData, ciudad: e.target.value})} />
                   <input type="text" placeholder="Notas adicionales (opcional)" className="col-span-2 p-3 rounded-xl bg-black border border-white/10 text-[10px] text-white outline-none uppercase" value={customerData.notas} onChange={e => setCustomerData({...customerData, notas: e.target.value})} />
                 </div>
                 <button onClick={sendOrder} className="w-full py-4 bg-yellow-500 text-black font-black rounded-2xl border-none cursor-pointer uppercase text-xs flex items-center justify-center gap-2">Enviar Pedido <Send size={16}/></button>
@@ -202,7 +192,6 @@ export const CatalogoRotulaciones = ({ onBack }: { onBack: () => void, theme: st
         )}
       </AnimatePresence>
       
-      {/* BOTÓN FLOTANTE CON CONTADOR DE PRODUCTOS */}
       {cart.length > 0 && !isCartOpen && (
         <button onClick={() => setIsCartOpen(true)} className="fixed bottom-8 right-8 z-50 bg-yellow-500 text-black px-8 py-4 rounded-full border-none cursor-pointer shadow-2xl flex items-center gap-3 group active:scale-95 transition-transform">
           <div className="relative">
