@@ -1,4 +1,4 @@
-export const PRODUCTS = [
+export const productMotos = [
   // --- VINILOS ADHESIVOS ---
   {
     id: 'ROT-001',
