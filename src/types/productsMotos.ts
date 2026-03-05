@@ -1,65 +1,62 @@
 export const productMotos = [
-  // --- VINILOS ADHESIVOS ---
-  {
-    id: 'ROT-001',
-    name: "Vinil Decorativo de Pared (m2)",
-    price: 15.00,
-    image: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=500&auto=format&fit=crop",
-    category: "Vinilos"
-  },
-  {
-    id: 'ROT-002',
-    name: "Vinil Esmerilado para Vidrios (m2)",
-    price: 18.00,
-    image: "https://images.unsplash.com/photo-1626178732047-39493f9e049d?q=80&w=500&auto=format&fit=crop",
-    category: "Vinilos"
-  },
-  {
-    id: 'ROT-003',
-    name: "Vinil Microperforado para Vidrieras",
-    price: 20.00,
-    image: "https://images.unsplash.com/photo-1517315003714-a071486bd9ea?q=80&w=500&auto=format&fit=crop",
-    category: "Publicidad"
-  },
+  // --- CATEGORÍA: BERA SBR (10 Diseños) ---
+  ...Array.from({ length: 10 }).map((_, i) => ({
+    id: `BERA-SBR-${i + 1}`,
+    name: `Kit Rotulación Bera SBR - ${['Carbon Edition', 'Monster Energy', 'Red Bull Racing', 'Sport Line', 'Black Gold', 'Neon Green', 'Classic Silver', 'HRC Special', 'Dark Matte', 'Graffiti Style'][i]}`,
+    price: 35.00,
+    image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=500&auto=format&fit=crop",
+    category: "Bera SBR"
+  })),
 
-  // --- ROTULACIÓN VEHICULAR ---
-  {
-    id: 'ROT-004',
-    name: "Rotulación Parcial de Puertas",
+  // --- CATEGORÍA: EMPIRE KEWAY (10 Diseños) ---
+  ...Array.from({ length: 10 }).map((_, i) => ({
+    id: `EMP-KW-${i + 1}`,
+    name: `Kit Empire Keeway - ${['Executive Style', 'Speed Blue', 'Night Rider', 'Titanium Force', 'Urban White', 'Cyberpunk', 'Gold Leaf', 'Racing Orange', 'Matte Grey', 'Limited Edition'][i]}`,
+    price: 40.00,
+    image: "https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?q=80&w=500&auto=format&fit=crop",
+    category: "Empire Owen/Keeway"
+  })),
+
+  // --- CATEGORÍA: MD EL AGUILA / TUCAN (10 Diseños) ---
+  ...Array.from({ length: 10 }).map((_, i) => ({
+    id: `MD-KIT-${i + 1}`,
+    name: `Kit MD Haojin - ${['Desert Storm', 'Arctic Camo', 'Red Fury', 'Yellow Flash', 'Royal Purple', 'Vintage Racing', 'Modern Stealth', 'Skull Edition', 'Fire Dragon', 'Minimalist Black'][i]}`,
+    price: 38.00,
+    image: "https://images.unsplash.com/photo-1444491741275-3747c53c99b4?q=80&w=500&auto=format&fit=crop",
+    category: "MD Motos"
+  })),
+
+  // --- CATEGORÍA: SUZUKI GN/DR (10 Diseños) ---
+  ...Array.from({ length: 10 }).map((_, i) => ({
+    id: `SUZ-GN-${i + 1}`,
+    name: `Kit Suzuki GN/DR - ${['Retro Classic', 'Dirt King', 'Adventure Pro', 'Street Fighter', 'Old School', 'Chrome Finish', 'Matte Military', 'Electric Yellow', 'Deep Ocean', 'Ghost Edition'][i]}`,
     price: 45.00,
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=500&auto=format&fit=crop",
-    category: "Vehicular"
-  },
+    image: "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=500&auto=format&fit=crop",
+    category: "Suzuki"
+  })),
+
+  // --- CATEGORÍA: EK EXPRESS / TX (10 Diseños) ---
+  ...Array.from({ length: 100 }).map((_, i) => ({
+    id: `EK-TX-${i + 1}`,
+    name: `Kit EK Express/TX - ${['Enduro Cross', 'Mud Warrior', 'High Speed', 'Shadow Line', 'Toxic Green', 'Blood Red', 'Viper Skin', 'Stealth Ops', 'Galaxy Theme', 'Legendary Blue'][i]}`,
+    price: 42.00,
+    image: "https://images.unsplash.com/photo-1622185135505-2d795003994a?q=80&w=500&auto=format&fit=crop",
+    category: "EK Motos"
+  })),
+
+  // --- CATEGORÍA: ACCESORIOS Y STICKERS ---
   {
-    id: 'ROT-005',
-    name: "Parasol Personalizado (Cintas)",
+    id: 'ACC-001',
+    name: "Cintas de Rin Reflectivas (Set)",
     price: 12.00,
     image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=500&auto=format&fit=crop",
-    category: "Vehicular"
-  },
-
-  // --- SEÑALÉTICA Y AVISOS ---
-  {
-    id: 'ROT-006',
-    name: "Aviso en PVC Rotulado",
-    price: 35.00,
-    image: "https://images.unsplash.com/photo-1543165365-072e2ed1237e?q=80&w=500&auto=format&fit=crop",
-    category: "Publicidad"
+    category: "Accesorios"
   },
   {
-    id: 'ROT-007',
-    name: "Señaléticas de Seguridad (Set x 4)",
-    price: 10.00,
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=500&auto=format&fit=crop",
-    category: "Servicios"
-  },
-
-  // --- ETIQUETAS ---
-  {
-    id: 'ROT-008',
-    name: "Etiquetas en Vinil (Troqueladas) x 50",
-    price: 12.50,
-    image: "https://images.unsplash.com/photo-1626197031107-c0903b22ccc4?q=80&w=500&auto=format&fit=crop",
-    category: "Papelería"
+    id: 'ACC-002',
+    name: "Protector de Tanque Pro-Grip",
+    price: 8.00,
+    image: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=500&auto=format&fit=crop",
+    category: "Accesorios"
   }
 ];
