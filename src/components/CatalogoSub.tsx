@@ -58,7 +58,7 @@ export const CatalogoSublimacion = ({ onBack }: { onBack: () => void, theme: str
         }
         const productList = cart.map(item => `• *${item.product.name}* (x${item.quantity}) - $${item.product.price * item.quantity}`).join('\n');
         const message = [
-            `*PEDIDO DE SUBLIMACIÓN - MIDNIGHT STUDIO* 🌙`,
+            `*PEDIDO DE SUBLIMACIÓN - KING OF DESING * 👑`,
             `----------------------------------`,
             `👤 *Cliente:* ${nombre}`,
             `🎫 *ID:* ${cedula.toUpperCase()}`,
