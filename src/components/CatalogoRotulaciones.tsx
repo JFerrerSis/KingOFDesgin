@@ -104,8 +104,10 @@ export const CatalogoRotulaciones = ({ onBack }: { onBack: () => void, theme: st
           </div>
 
           {/* CATEGORÍAS CON SCROLL HORIZONTAL MEJORADO */}
+          {/* CATEGORÍAS CON SCROLL HORIZONTAL MEJORADO */}
           <div className="w-full overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing pb-4">
-            <div className="flex flex-nowrap gap-2 min-w-max">
+            {/* Añadimos justify-center aquí */}
+            <div className="flex flex-nowrap gap-2 min-w-max justify-center mx-auto">
               {categories.map((cat) => (
                 <button
                   key={cat}
