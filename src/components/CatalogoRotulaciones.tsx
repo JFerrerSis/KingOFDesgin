@@ -103,10 +103,8 @@ export const CatalogoRotulaciones = ({ onBack }: { onBack: () => void, theme: st
             <input type="text" placeholder="Buscar servicios..." className="w-full pl-12 pr-4 py-4 rounded-2xl border-none bg-white/10 text-white outline-none focus:ring-2 focus:ring-yellow-500" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
           </div>
 
-          {/* CATEGORÍAS CON SCROLL HORIZONTAL MEJORADO */}
-          {/* CATEGORÍAS CON SCROLL HORIZONTAL MEJORADO */}
-          <div className="w-full overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing pb-4">
-            {/* Añadimos justify-center aquí */}
+         
+          {/* <div className="w-full overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing pb-4">
             <div className="flex flex-nowrap gap-2 min-w-max justify-center mx-auto">
               {categories.map((cat) => (
                 <button
@@ -121,7 +119,7 @@ export const CatalogoRotulaciones = ({ onBack }: { onBack: () => void, theme: st
                 </button>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="flex-1 overflow-y-auto px-4 md:px-8 pb-32 no-scrollbar">

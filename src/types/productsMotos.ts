@@ -13,7 +13,7 @@ export const productMotos = [
 
     return {
       id: `BERA-SBR-${i + 1}`,
-      name: `Kit Rotulación Bera SBR`,
+      name: `Kit Rotulación Moto Completa`,
       price: 25.00,
       image: imagesSBR[i],
       category: "Bera SBR"
